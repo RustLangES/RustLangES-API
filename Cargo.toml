@@ -1,0 +1,13 @@
+[package]
+name = "rust-lang-en-espanol-api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+salvo = "0.41.0"
+shuttle-salvo = "0.31.0"
+shuttle-runtime = "0.31.0"
+tokio = "1.26.0"
+shuttle-persist = "0.31.0"
+once_cell = "1.18.0"
+
