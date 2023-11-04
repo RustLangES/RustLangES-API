@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use once_cell::sync::Lazy;
 use salvo::prelude::*;
 use shuttle_persist::PersistInstance;
@@ -39,7 +41,7 @@ async fn list_visit_references(res: &mut Response) {
             Err(_) => 0
         };
         (reference, visits)
-    }).collect::<Vec<(&String, u32)>>();
+    }).collect::<HashMap<&String, u32>>();
 
     res.render(Json(references));
 }
