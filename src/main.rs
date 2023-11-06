@@ -1,5 +1,5 @@
 use once_cell::sync::Lazy;
-use salvo::prelude::*;
+use salvo::{prelude::*, cors::Cors, hyper::Method};
 use shuttle_salvo::ShuttleSalvo;
 use sqlx::PgPool;
 use std::collections::HashMap;
@@ -100,10 +100,14 @@ async fn salvo(
         println!("Error running migrations: {:#?}", e);
         return ShuttleSalvo::Err(shuttle_runtime::Error::Custom(e.into()));
     }
-
+    
     *DB_CONNECTION.write().await = Some(pool);
-
-    let mut router = Router::new();
+    let cors_handler = Cors::new()
+        .allow_origin("https://rustlanges.github.io")
+        .allow_methods(vec![Method::GET, Method::POST])
+        .into_handler();
+    
+    let mut router = Router::with_hoop(cors_handler);
     router = router.push(
         Router::with_path("track")
             .push(Router::with_path("count").post(count_visit_references))
