@@ -1,0 +1,26 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT domain, COUNT(visits.id) as visits \n        FROM domains \n        INNER JOIN visits ON domains.id = visits.domain_id \n        GROUP BY domain",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "domain",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 1,
+        "name": "visits",
+        "type_info": "Int8"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      null
+    ]
+  },
+  "hash": "ab04a5af3ef0d2741eb83726cec4d1041b906e51583d6fc1af93fee9650a29cd"
+}
