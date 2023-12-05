@@ -1,5 +1,5 @@
 use axum::{
-    http::{Method, HeaderValue},
+    http::Method,
     routing::{get, post},
     Router,
 };
@@ -9,7 +9,7 @@ pub mod errors;
 use errors::Errors;
 pub mod models;
 pub mod services;
-use tower_http::cors::CorsLayer;
+use tower_http::cors::{CorsLayer, Any};
 
 use controllers::track::track;
 
@@ -24,7 +24,7 @@ pub struct AppState {
 #[shuttle_runtime::main]
 async fn main(
     #[shuttle_shared_db::Postgres(
-        local_uri = "postgres://postgres:{secrets.PASSWORD}@localhost:16695/RustLangES"
+        local_uri = "postgres://postgres:{secrets.PASSWORD}@localhost:16695/RustLangEs"
     )]
     pool: PgPool,
 ) -> shuttle_axum::ShuttleAxum {
@@ -39,11 +39,7 @@ async fn main(
 
     let cors = CorsLayer::new()
         .allow_methods([Method::GET, Method::POST])
-        .allow_origin(
-            "https://rustlanges.github.io"
-                .parse::<HeaderValue>()
-                .unwrap(),
-        );
+        .allow_origin(Any);
 
     let router = Router::new();
 
