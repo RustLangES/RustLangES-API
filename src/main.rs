@@ -1,4 +1,5 @@
 use axum::{
+    http::{Method, HeaderValue},
     routing::{get, post},
     Router,
 };
@@ -8,6 +9,7 @@ pub mod errors;
 use errors::Errors;
 pub mod models;
 pub mod services;
+use tower_http::cors::CorsLayer;
 
 use controllers::track::track;
 
@@ -35,13 +37,24 @@ async fn main(
         db_pool: pool.clone(),
     });
 
+    let cors = CorsLayer::new()
+        .allow_methods([Method::GET, Method::POST])
+        .allow_origin(
+            "https://rustlanges.github.io"
+                .parse::<HeaderValue>()
+                .unwrap(),
+        );
+
     let router = Router::new();
 
     let track_routes = Router::new()
         .route("/track/count", post(track::count_visit_references))
         .route("/track", get(track::list_visit_references));
 
-    let router = router.merge(track_routes).with_state(initial_state);
+    let router = router
+        .merge(track_routes)
+        .with_state(initial_state)
+        .layer(cors);
 
     Ok(router.into())
 }

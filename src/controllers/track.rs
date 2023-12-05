@@ -1,5 +1,8 @@
 pub mod track {
-    use crate::{errors::Errors, services::track_service::TrackService, AppState, models::request::reference_query::ReferenceQuery};
+    use crate::{
+        errors::Errors, models::request::reference_query::ReferenceQuery,
+        services::track_service::TrackService, AppState,
+    };
     use axum::{
         extract::{Query, State},
         http::StatusCode,
