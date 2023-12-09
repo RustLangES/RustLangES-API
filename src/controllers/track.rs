@@ -17,7 +17,6 @@ pub mod track {
         State(state): State<Arc<AppState>>,
         Query(query): Query<ReferenceQuery>,
     ) -> Result<impl IntoResponse, Errors> {
-        println!("query: {}", query.reference);
         let reference = query.reference.to_lowercase();
 
         TrackService::count_a_visit(&state.db_pool.clone(), reference).await?;
