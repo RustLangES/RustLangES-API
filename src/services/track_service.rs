@@ -1,4 +1,6 @@
+use async_session::log::info;
 use sqlx::PgPool;
+use tracing::error;
 
 use crate::{errors::Errors, models::dtos::visitwithdomain::VisitWithDomain};
 
@@ -8,7 +10,16 @@ impl TrackService {
     /// # Errors
     /// `Errors::DatabaseError`
     pub async fn count_a_visit(pool: &PgPool, reference: String) -> Result<(), Errors> {
-        Self::insert_visit_if_exists(pool, &reference).await?;
+        match Self::insert_visit_if_exists(pool, &reference).await {
+            Err(Errors::DatabaseError(sqlx::Error::RowNotFound)) => {
+                info!("{} not found", reference);
+            }
+            Ok(_) => return Ok(()),
+            Err(e) => {
+                error!("Error saving a visit : {:?}", e);
+                return Err(e);
+            }
+        }
         Self::insert_visit_and_domain(pool, &reference).await?;
         Ok(())
     }

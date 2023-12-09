@@ -21,7 +21,7 @@ pub mod track {
 
         TrackService::count_a_visit(&state.db_pool.clone(), reference).await?;
 
-        Ok((StatusCode::NOT_FOUND, ()))
+        Ok((StatusCode::NO_CONTENT, ()))
     }
 
     /// # Errors

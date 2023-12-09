@@ -9,7 +9,7 @@ pub mod errors;
 use errors::Errors;
 pub mod models;
 pub mod services;
-use tower_http::cors::{CorsLayer, Any};
+use tower_http::cors::{Any, CorsLayer};
 
 use controllers::track::track;
 

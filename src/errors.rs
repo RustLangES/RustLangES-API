@@ -22,11 +22,14 @@ impl IntoResponse for Errors {
                 format!("Error migrating database: {e:#?}"),
             )
                 .into_response(),
-            Self::DatabaseError(e) => (
-                StatusCode::CONFLICT,
-                format!("Error executing a query: {e:#?}"),
-            )
-                .into_response(),
+            Self::DatabaseError(e) => {
+                error!("Database Error: {:#?}", e);
+                (
+                    StatusCode::CONFLICT,
+                    format!("Error executing a database query"),
+                )
+                    .into_response()
+            }
             // e => (
             //     StatusCode::INTERNAL_SERVER_ERROR,
             //     format!("Something happens {:#?}", e),
