@@ -1,8 +1,10 @@
+use async_session::MemoryStore;
 use axum::{
     http::Method,
     routing::{get, post},
     Router,
 };
+use shuttle_secrets::SecretStore;
 use sqlx::PgPool;
 use std::sync::Arc;
 pub mod errors;
@@ -14,16 +16,23 @@ use tower_http::cors::{Any, CorsLayer};
 use controllers::track::track;
 
 pub mod controllers;
+pub mod utils;
 
 #[derive(Debug)]
 pub struct AppState {
-    // pub store: MemoryStore,
+    pub store: MemoryStore,
+    pub client_id: String,
+    pub client_secret: String,
+    pub redirect_uri: String,
     pub db_pool: PgPool,
 }
 
 #[shuttle_runtime::main]
 async fn main(
-    #[shuttle_shared_db::Postgres]
+    #[shuttle_secrets::Secrets] secret_store: SecretStore,
+    #[shuttle_shared_db::Postgres(
+        local_uri = "postgres://postgres:{secrets.PASSWORD}@localhost:16695/RustLangEs"
+    )]
     pool: PgPool,
 ) -> shuttle_axum::ShuttleAxum {
     sqlx::migrate!("./migrations")
@@ -32,6 +41,10 @@ async fn main(
         .map_err(Errors::MigrationError)?;
 
     let initial_state = Arc::new(AppState {
+        store: MemoryStore::new(),
+        client_id: secret_store.get("CLIENT_ID").ok_or(Errors::SecretNotFound)?,
+        client_secret: secret_store.get("CLIENT_SECRET").ok_or(Errors::SecretNotFound)?,
+        redirect_uri: secret_store.get("REDIRECT_URI").ok_or(Errors::SecretNotFound)?,
         db_pool: pool.clone(),
     });
 
