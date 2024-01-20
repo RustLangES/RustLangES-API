@@ -13,7 +13,7 @@ pub mod models;
 pub mod services;
 use tower_http::cors::{Any, CorsLayer};
 
-use controllers::track::track;
+use controllers::{track::track, auth::auth};
 
 pub mod controllers;
 pub mod utils;
@@ -53,6 +53,10 @@ async fn main(
         .allow_origin(Any);
 
     let router = Router::new();
+    
+    let auth_routes = Router::new()
+        .route("/discord", get(auth::discord));
+
 
     let track_routes = Router::new()
         .route("/track/count", post(track::count_visit_references))
@@ -60,6 +64,7 @@ async fn main(
 
     let router = router
         .merge(track_routes)
+        .merge(auth_routes)
         .with_state(initial_state)
         .layer(cors);
 
