@@ -18,7 +18,6 @@ jobs:
       - uses: shuttle-hq/deploy-action@main
         with:
           deploy-key: ${{ secrets.SHUTTLE_DEPLOY_KEY }}
-          allow-dirty: "true"
           no-test: "true"
           secrets: |
             CLIENT_ID = '${{ secrets.CLIENT_ID }}'
