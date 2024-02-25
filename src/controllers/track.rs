@@ -1,7 +1,7 @@
 pub mod track {
     use crate::{
-        errors::Errors, models::request::reference_query::ReferenceQuery,
-        services::track_service::TrackService, AppState,
+        errors::Errors, models::request::reference_query::ReferenceQuery, services::track_service::TrackService,
+        AppState,
     };
     use axum::{
         extract::{Query, State},
@@ -26,9 +26,7 @@ pub mod track {
 
     /// # Errors
     /// `Errors::DatabaseError`
-    pub async fn list_visit_references(
-        State(state): State<Arc<AppState>>,
-    ) -> Result<impl IntoResponse, Errors> {
+    pub async fn list_visit_references(State(state): State<Arc<AppState>>) -> Result<impl IntoResponse, Errors> {
         let result = TrackService::get_visits_by_domain(&state.db_pool.clone()).await?;
 
         let mut references = HashMap::with_capacity(result.len());

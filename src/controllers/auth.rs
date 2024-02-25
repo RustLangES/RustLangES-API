@@ -1,6 +1,5 @@
 pub mod auth {
     use std::sync::Arc;
-    use std::time::Duration;
 
     use crate::errors::Errors;
     use crate::models::discord::DiscordCode;
@@ -9,7 +8,6 @@ pub mod auth {
     use crate::utils::extractors::validate_query::ValidatedQuery;
     use crate::AppState;
     use anyhow::Result;
-    use async_session::{Session, SessionStore};
     use axum::extract::State;
     use axum::http::StatusCode;
     use axum::{extract::Query, response::IntoResponse, Json};
@@ -22,8 +20,7 @@ pub mod auth {
     ) -> Result<impl IntoResponse, Errors> {
         info!("Discord callback");
         let code = code.code;
-        let mut client =
-            DiscordService::new(&state.client_id, &state.client_secret, &state.redirect_uri);
+        let mut client = DiscordService::new(&state.client_id, &state.client_secret, &state.redirect_uri);
 
         let access = client.get_token(&code).await?;
 
@@ -31,21 +28,17 @@ pub mod auth {
 
         UserService::insert_or_update(&state.db_pool, &user, &access).await?;
 
-        let mut session = Session::new();
-        session.expire_in(Duration::from_secs(access.expires_in as u64));
-        session.insert(&access.access_token, &user)?;
-
-        state.store.store_session(session).await?;
+        state
+            .redis_client
+            .pset_ex(access.access_token.clone(), &user, access.expires_in as u64)
+            .await?;
 
         Ok((StatusCode::OK, Json(access + user)))
     }
 
-    pub async fn discord_callback(
-        Query(access_token): Query<String>,
-    ) -> Result<impl IntoResponse, Errors> {
+    pub async fn discord_callback(Query(access_token): Query<String>) -> Result<impl IntoResponse, Errors> {
         let user = DiscordService::get_user_with_access_token(&access_token).await?;
 
         Ok((StatusCode::OK, Json(user)))
     }
-
 }

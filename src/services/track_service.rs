@@ -39,12 +39,9 @@ impl TrackService {
     }
 
     async fn insert_visit_and_domain(pool: &PgPool, reference: &String) -> Result<(), Errors> {
-        let result = sqlx::query!(
-            "INSERT INTO domains (domain) VALUES ($1) RETURNING id",
-            reference
-        )
-        .fetch_one(&pool.clone())
-        .await?;
+        let result = sqlx::query!("INSERT INTO domains (domain) VALUES ($1) RETURNING id", reference)
+            .fetch_one(&pool.clone())
+            .await?;
 
         sqlx::query!("INSERT INTO visits (domain_id) VALUES ($1)", result.id)
             .execute(&pool.clone())

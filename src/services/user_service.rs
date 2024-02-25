@@ -8,11 +8,7 @@ use crate::{
 pub struct UserService {}
 
 impl UserService {
-    pub async fn insert_or_update(
-        db_pool: &PgPool,
-        user: &UserData,
-        access: &AccessToken,
-    ) -> Result<(), Errors> {
+    pub async fn insert_or_update(db_pool: &PgPool, user: &UserData, access: &AccessToken) -> Result<(), Errors> {
         sqlx::query!(
             "INSERT INTO users (username, discord_id, access_token, refresh_token, expires_in) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (discord_id) DO UPDATE SET access_token = $3, refresh_token = $4, expires_in = $5, username = $1",
             user.username,

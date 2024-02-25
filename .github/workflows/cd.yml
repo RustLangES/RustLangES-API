@@ -23,4 +23,6 @@ jobs:
           secrets: |
             CLIENT_ID = '${{ secrets.CLIENT_ID }}'
             CLIENT_SECRET = '${{ secrets.CLIENT_SECRET }}'
+            REDIRECT_URI = '${{ secrets.REDIRECT_URI }}'
+            REDIS_URI = '${{ secrets.REDIS_URI }}'
             DEPLOY_URI = '${{ secrets.DEPLOY_URI }}'

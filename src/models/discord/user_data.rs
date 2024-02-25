@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
+use redis_macros::{FromRedisValue, ToRedisArgs};
 
-#[derive(Deserialize, Serialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, FromRedisValue, ToRedisArgs, Debug, Clone)]
 pub struct UserData {
     pub accent_color: Option<u32>,
     pub avatar: Option<String>,
