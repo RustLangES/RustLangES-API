@@ -7,7 +7,7 @@ pub struct UserData {
     pub avatar: Option<String>,
     pub avatar_decoration_data: Option<String>,
     pub banner: Option<String>,
-    pub banner_color: Option<u32>,
+    pub banner_color: Option<String>,
     pub discriminator: String,
     pub email: Option<String>,
     pub flags: Option<u32>,
