@@ -19,6 +19,7 @@ jobs:
         with:
           deploy-key: ${{ secrets.SHUTTLE_DEPLOY_KEY }}
           no-test: "true"
+          allow-dirty: "true"
           secrets: |
             CLIENT_ID = '${{ secrets.CLIENT_ID }}'
             CLIENT_SECRET = '${{ secrets.CLIENT_SECRET }}'
