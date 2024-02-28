@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 use crate::{errors::Errors, models::discord::UserData, AppState};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct AuthMiddleware(UserData);
+pub struct AuthMiddleware(pub UserData);
 
 pub async fn auth(
     State(data): State<Arc<AppState>>,

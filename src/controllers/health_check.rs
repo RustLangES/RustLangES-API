@@ -1,7 +1,5 @@
 use axum::{http::StatusCode, response::IntoResponse, Json};
 
-
-
 pub async fn health_checker_handler() -> impl IntoResponse {
     const MESSAGE: &str = "Rust y Axum Framework";
 

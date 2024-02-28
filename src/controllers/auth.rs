@@ -30,7 +30,7 @@ pub mod auth {
 
         state
             .redis_client
-            .pset_ex(access.access_token.clone(), &user, access.expires_in as u64)
+            .set_ex(access.access_token.clone(), &user, access.expires_in as u64)
             .await?;
 
         Ok((StatusCode::OK, Json(access + user)))

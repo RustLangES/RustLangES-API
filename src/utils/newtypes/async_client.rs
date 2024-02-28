@@ -9,18 +9,13 @@ impl AsyncClient {
         Ok(AsyncClient(Client::open(redis_uri)?))
     }
 
-    pub async fn pset_ex<K: ToRedisArgs + Send + Sync, V: ToRedisArgs + Send + Sync>(
+    pub async fn set_ex<K: ToRedisArgs + Send + Sync, V: ToRedisArgs + Send + Sync>(
         &self,
         key: K,
         value: V,
-        milliseconds: u64,
+        seconds: u64,
     ) -> Result<(), Errors> {
-        Ok(self
-            .0
-            .get_async_connection()
-            .await?
-            .pset_ex(key, value, milliseconds)
-            .await?)
+        Ok(self.0.get_async_connection().await?.set_ex(key, value, seconds).await?)
     }
 
     pub async fn get<T: FromRedisValue, K: ToRedisArgs + Send + Sync>(&self, key: K) -> Result<T, Errors> {
