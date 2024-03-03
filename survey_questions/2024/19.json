@@ -1,0 +1,25 @@
+{
+    "allowComment": false,
+    "type": "single",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Cómo evaluaría su experiencia en Rust?",
+            "options": [
+                "No puedo escribir código Rust",
+                "Puedo escribir programas simples en Rust",
+                "Puedo escribir código útil, listo para producción, pero con dificultad",
+                "Puedo escribir código Rust productivamente"
+            ]
+        },
+        "en": {
+            "title": "How would you rate your experience in Rust?",
+            "options": [
+                "I can't write Rust code",
+                "I can write simple programs in Rust",
+                "I can write useful, production-ready Rust code, but with difficulty",
+                "I can write Rust code productively"
+            ]
+        }
+    }
+}

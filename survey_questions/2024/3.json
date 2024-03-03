@@ -1,0 +1,13 @@
+{
+    "allowComment": false,
+    "type": "numeric",
+    "section": "about",
+    "translations": {
+        "es": {
+            "title": "¿Cuántos años tienes?"
+        },
+        "en": {
+            "title": "How old are you?"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "allowComment": false,
+    "type": "text-multiple",
+    "section": "resources",
+    "translations": {
+        "es": {
+            "title": "¿Rustaceans destacados?"
+        },
+        "en": {
+            "title": "Prominent Rustaceans?"
+        }
+    }
+}

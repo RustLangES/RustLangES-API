@@ -1,0 +1,39 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Para cuáles sistemas operativos o tiempos de ejecución desarrolla Rust software?",
+            "note": "Esto se refiere específicamente a en cuáles sistemas operativos o ambientes se ejecutan las aplicaciones que escribes usando Rust, no al ambiente en el que desarrollas o a la arquitectura (por ejemplo x86 o ARM) objetivo.",
+            "options": [
+                "Linux (ordenador o servidor)",
+                "Windows 10/11",
+                "Windows 8 ó anterior",
+                "macOS",
+                "iOS",
+                "Android",
+                "Plataformas embebidas (con un sistema operativo)",
+                "Plataformas embebidas (bare metal o sin sistema operativo)",
+                "WebAssembly",
+                "Explícitamente independiente de la plataforma (por ejemplo, una biblioteca que no interactúa con el sistema operativo)"
+            ]
+        },
+        "en": {
+            "title": "For which operating systems or runtimes do you develop Rust software?",
+            "note": "This specifically refers to the operating systems or environments on which the applications you write using Rust run, not the development environment or the target architecture (e.g., x86 or ARM).",
+            "options": [
+                "Linux (desktop or server)",
+                "Windows 10/11",
+                "Windows 8 or earlier",
+                "macOS",
+                "iOS",
+                "Android",
+                "Embedded platforms (with an operating system)",
+                "Embedded platforms (bare metal or without an operating system)",
+                "WebAssembly",
+                "Explicitly platform-independent (e.g., a library that does not interact with the operating system)"
+            ]
+        }
+    }
+}

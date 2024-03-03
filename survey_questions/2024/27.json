@@ -1,0 +1,23 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Cómo realizas el build tus proyectos Rust?",
+            "options": [
+                "Utilizo cargo",
+                "Utilizo algún otro sistema de compilación",
+                "Combino Cargo y otro sistema de build"
+            ]
+        },
+        "en": {
+            "title": "How do you build your Rust projects?",
+            "options": [
+                "I use Cargo",
+                "I use some other build system",
+                "I combine Cargo and another build system"
+            ]
+        }
+    }
+}

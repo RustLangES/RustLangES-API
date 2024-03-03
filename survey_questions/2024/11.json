@@ -1,0 +1,13 @@
+{
+    "allowComment": false,
+    "type": "text-multiple",
+    "section": "resources",
+    "translations": {
+        "es": {
+            "title": "¿Qué creadores de vídeos relacionados con la programación sigues (en YouTube, Twitch, etc.)?"
+        },
+        "en": {
+            "title": "Which programming-related video creators do you follow (on YouTube, Twitch, etc.)?"
+        }
+    }
+}

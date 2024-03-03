@@ -1,0 +1,13 @@
+{
+    "allowComment": true,
+    "type": "single",
+    "section": "resources",
+    "translations": {
+        "es": {
+            "title": "¿Qué recursos pagos (cursos, vídeos, libros, etc.) has utilizado para aprender Rust?"
+        },
+        "en": {
+            "title": "What paid resources (courses, videos, books, etc.) have you used to learn Rust?"
+        }
+    }
+}

@@ -12,6 +12,14 @@ pub trait ToErrorResponse {
     fn to_error_response(self) -> Json<ErrorResponse>;
 }
 
+impl ToErrorResponse for &str {
+    fn to_error_response(self) -> Json<ErrorResponse> {
+        Json(ErrorResponse {
+            message: self.to_string(),
+        })
+    }
+}
+
 impl ToErrorResponse for String {
     fn to_error_response(self) -> Json<ErrorResponse> {
         Json(ErrorResponse { message: self })

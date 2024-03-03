@@ -1,0 +1,24 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                INSERT INTO answer_comments (comment, question_id, discord_id)\n                VALUES ($1, $2, $3)\n                RETURNING id\n                ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int2"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Varchar",
+        "Int2",
+        "Varchar"
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "a06d7500f15965b3b9327df3d12e072342610b172be6dd7d3abf31d17f4112da"
+}

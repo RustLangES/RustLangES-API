@@ -15,7 +15,7 @@ use crate::{errors::Errors, models::discord::UserData, AppState};
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct AuthMiddleware(pub UserData);
 
-pub async fn auth(
+pub async fn authenticator(
     State(data): State<Arc<AppState>>,
     mut req: Request<Body>,
     next: Next,

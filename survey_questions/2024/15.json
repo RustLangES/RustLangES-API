@@ -1,0 +1,27 @@
+{
+    "allowComment": false,
+    "type": "single",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Qué tan satisfecho estás con el estado general de Rust?",
+            "options": [
+                "Muy insatisfecho",
+                "Insatisfecho",
+                "Neutro",
+                "Satisfecho",
+                "Muy satisfecho"
+            ]
+        },
+        "en": {
+            "title": "How satisfied are you with the overall state of Rust?",
+            "options": [
+                "Very dissatisfied",
+                "Dissatisfied",
+                "Neutral",
+                "Satisfied",
+                "Very satisfied"
+            ]
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "allowComment": false,
+    "type": "single",
+    "section": "resources",
+    "translations": {
+        "es": {
+            "title": "¿Está participando actualmente de un curso que utilice o enseñe Rust? o ¿ha participado de un curso de este tipo el año pasado?",
+            "options": [
+                "Sí, a través de la universidad, colegio, o alguna otra institución de educación",
+                "Sí, a través de mi empleador, contratista o consultoría",
+                "No"
+            ]
+        },
+        "en": {
+            "title": "Are you currently participating in a course that uses or teaches Rust, or have you participated in such a course in the past year?",
+            "options": [
+                "Yes, through a university, school, or other educational institution",
+                "Yes, through my employer, contractor, or consultancy",
+                "No"
+            ]
+        }
+    }
+}

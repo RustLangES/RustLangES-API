@@ -1,0 +1,29 @@
+{
+    "allowComment": false,
+    "type": "single",
+    "section": "about",
+    "translations": {
+        "es": {
+            "title": "¿Tienes un grado de educación superior?",
+            "options": [
+                "No",
+                "Incompleto, en un campo relacionado con mi profesión actual",
+                "Incompleto, pero en un campo no relacionado con mi profesión actual",
+                "Sí, en un campo relacionado con mi profesión actual",
+                "Sí, pero en un campo no relacionado con mi profesión actual",
+                "En curso"
+            ]
+        },
+        "en": {
+            "title": "Do you have a higher education degree?",
+            "options": [
+                "No",
+                "Incomplete, in a field related to my current profession",
+                "Incomplete, but in a field not related to my current profession",
+                "Yes, in a field related to my current profession",
+                "Yes, but in a field not related to my current profession",
+                "In progress"
+            ]
+        }
+    }
+}

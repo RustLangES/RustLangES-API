@@ -1,0 +1,91 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            SELECT id, question_type as \"question_type: _\", section_type as \"section_type: _\", allow_comment, options_available, survey_id, deleted_at, created_at FROM questions WHERE id = $1\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int2"
+      },
+      {
+        "ordinal": 1,
+        "name": "question_type: _",
+        "type_info": {
+          "Custom": {
+            "name": "choice_option",
+            "kind": {
+              "Enum": [
+                "single",
+                "multiple",
+                "limited-2",
+                "limited-3",
+                "limited-4",
+                "numeric",
+                "text-multiple"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "section_type: _",
+        "type_info": {
+          "Custom": {
+            "name": "survey_section",
+            "kind": {
+              "Enum": [
+                "features",
+                "use",
+                "resources",
+                "about"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "allow_comment",
+        "type_info": "Bool"
+      },
+      {
+        "ordinal": 4,
+        "name": "options_available",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 5,
+        "name": "survey_id",
+        "type_info": "Int2"
+      },
+      {
+        "ordinal": 6,
+        "name": "deleted_at",
+        "type_info": "Timestamp"
+      },
+      {
+        "ordinal": 7,
+        "name": "created_at",
+        "type_info": "Timestamp"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int2"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      false
+    ]
+  },
+  "hash": "ed4b7732329d4debde3f42b0b19d598bff9488eedd558ec589fff339d7686f3e"
+}

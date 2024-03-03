@@ -1,0 +1,13 @@
+{
+    "allowComment": false,
+    "type": "text-multiple",
+    "section": "resources",
+    "translations": {
+        "es": {
+            "title": "¿Qué personas lees, sigues o simplemente quieres destacar en la comunidad de Rust?"
+        },
+        "en": {
+            "title": "Which individuals do you read, follow, or simply want to highlight in the Rust community?"
+        }
+    }
+}

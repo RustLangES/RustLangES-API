@@ -1,0 +1,33 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "features",
+    "translations": {
+        "es": {
+            "title": "¿Qué crees que falta actualmente en Rust?",
+            "options": [
+                "Más cosas en la librería estándar",
+                "Optional Arguments/Parameters",
+                "Named Arguments/Parameters",
+                "Union Types/Enums anónimos",
+                "Refinement Types",
+                "Negative Impls",
+                "Code splitting en WASM",
+                "Reflection"
+            ]
+        },
+        "en": {
+            "title": "What do you think is currently missing in Rust?",
+            "options": [
+                "More things in the standard library",
+                "Optional Arguments/Parameters",
+                "Named Arguments/Parameters",
+                "Union Types/Anonymous Enums",
+                "Refinement Types",
+                "Negative Impls",
+                "Code splitting in WASM",
+                "Reflection"
+            ]
+        }
+    }
+}

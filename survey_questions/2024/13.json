@@ -1,0 +1,42 @@
+{
+    "allowComment": true,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Para qué usas Rust?",
+            "options": [
+                "Frontend Development",
+                "Backend Development",
+                "Data Analysis",
+                "Machine Learning",
+                "Desktop Apps",
+                "Mobile Apps",
+                "Embedded Apps",
+                "Game Development",
+                "Data Visualization",
+                "Graphics & Animation",
+                "CLIs",
+                "Otros"
+            ]
+        },
+        "en": {
+            "title": "How do you use Rust?",
+            "options": [
+                "Frontend Development",
+                "Backend Development",
+                "Data Analysis",
+                "Machine Learning",
+                "Desktop Apps",
+                "Mobile Apps",
+                "Embedded Apps",
+                "Game Development",
+                "Data Visualization",
+                "Graphics & Animation",
+                "CLIs",
+                "Other",
+                "Leave a comment"
+            ]
+        }
+    }
+}

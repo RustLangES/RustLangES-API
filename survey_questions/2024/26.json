@@ -1,0 +1,35 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Cuáles de estos problemas recuerda haber tenido durante el último año?",
+            "options": [
+                "Implementando cosas sobre tuplas",
+                "Dividir cosas en crates",
+                "Tener que implementar iteradores manualmente",
+                "No poder hacer lo suficiente en const fn",
+                "Necesitar bajar al ABI de C para plugins de Rust",
+                "Async",
+                "Traits y genericidad",
+                "Borrow checker",
+                "Macros"
+            ]
+        },
+        "en": {
+            "title": "Which of these issues do you remember having over the past year?",
+            "options": [
+                "Implementing things on tuples",
+                "Splitting things into crates",
+                "Having to implement iterators manually",
+                "Not being able to do enough in const fn",
+                "Needing to drop down to C ABI for Rust plugins",
+                "Async",
+                "Traits and generics",
+                "Borrow checker",
+                "Macros"
+            ]
+        }
+    }
+}

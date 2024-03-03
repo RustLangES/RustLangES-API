@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO surveys (year) VALUES ($1);",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int2"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "331d7b34f722c34785ad9c8519fe5c0046708c06af6f821c9f463331f084fd68"
+}

@@ -1,0 +1,31 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Cuál de las siguientes afirmaciones siente acerca de Rust?",
+            "options": [
+                "Rust proporciona un beneficio real sobre otros lenguajes de programación",
+                "Rust es significativamente más complicado de programar que otros lenguajes de programación",
+                "Rust requiere mucho más esfuerzo para aprender que otros lenguajes de programación",
+                "El código Rust tiende a contener significativamente menos errores que el código equivalente escrito en otro lenguaje de programación",
+                "Es arriesgado usar Rust en producción",
+                "Rust me hace más productivo/a",
+                "Rust es divertido de usar "
+            ]
+        },
+        "en": {
+            "title": "Which of the following statements do you feel about Rust?",
+            "options": [
+                "Rust provides real benefits over other programming languages",
+                "Rust is significantly more complicated to program than other programming languages",
+                "Rust requires much more effort to learn than other programming languages",
+                "Rust code tends to contain significantly fewer errors than equivalent code written in another programming language",
+                "It is risky to use Rust in production",
+                "Rust makes me more productive",
+                "Rust is fun to use"
+            ]
+        }
+    }
+}

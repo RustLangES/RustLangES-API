@@ -1,3 +1,5 @@
+use std::io;
+
 use axum::{
     http::StatusCode,
     response::{IntoResponse, Response},
@@ -46,6 +48,13 @@ pub enum Errors {
 
     #[error(transparent)]
     RedisError(#[from] RedisError),
+
+    #[error(transparent)]
+    IOError(#[from] io::Error),
+
+    #[error("You can't add other comment to this question")]
+    UnavailableAnswer,
+
     // #[error(transparent)]
     // Anyhow(#[from] anyhow::Error),
     #[error("Invalid session")]
@@ -57,6 +66,12 @@ impl IntoResponse for Errors {
         error!("Error: {:#?}", self);
 
         match self {
+            Errors::UnavailableAnswer => (
+                StatusCode::BAD_REQUEST,
+                Errors::UnavailableAnswer.to_string().to_error_response(),
+            )
+                .into_response(),
+            Errors::IOError(_) => (StatusCode::NOT_FOUND, "Error getting a path".to_error_response()).into_response(),
             Errors::UNAUTHORIZED => {
                 (StatusCode::UNAUTHORIZED, Errors::UNAUTHORIZED.to_error_response()).into_response()
             }

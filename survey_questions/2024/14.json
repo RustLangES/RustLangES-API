@@ -1,0 +1,33 @@
+{
+    "allowComment": false,
+    "type": "limited-4",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Con qué aspectos de Rust tienes más dificultades?",
+            "options": [
+                "Ownership",
+                "Lifetimes",
+                "Optimizar código (minificar binarios, mejorar performance, etc.)",
+                "Multiparadigma de Rust (OOP Rust version, functional Rust version)",
+                "Aplicar buenas prácticas y patrones (DDD, TDD, SOLID)",
+                "Optimizar tiempos de compilación",
+                "Interoperar con FFI (C bindings, C++, Node, Python, etc.)",
+                "Desplegar aplicación"
+            ]
+        },
+        "en": {
+            "title": "Which aspects of Rust do you find most challenging?",
+            "options": [
+                "Ownership",
+                "Lifetimes",
+                "Code optimization (minifying binaries, improving performance, etc.)",
+                "Rust's multiparadigm (OOP Rust version, functional Rust version)",
+                "Applying best practices and patterns (DDD, TDD, SOLID)",
+                "Optimizing compilation times",
+                "Interoperability with FFI (C bindings, C++, Node, Python, etc.)",
+                "Deploying applications"
+            ]
+        }
+    }
+}

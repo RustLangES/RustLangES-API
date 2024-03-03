@@ -1,0 +1,13 @@
+{
+    "allowComment": false,
+    "type": "numeric",
+    "section": "about",
+    "translations": {
+        "es": {
+            "title": "¿Cuántos años de experiencia en Rust?"
+        },
+        "en": {
+            "title": "How many years of experience in Rust?"
+        }
+    }
+}

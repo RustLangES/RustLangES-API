@@ -1,0 +1,25 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "features",
+    "translations": {
+        "es": {
+            "title": "¿Cuáles de estas características de sintaxis has utilizado?",
+            "options": [
+                "let-else",
+                "Newtypes",
+                "Derive Macros",
+                "Attribute Macros"
+            ]
+        },
+        "en": {
+            "title": "Which of these syntax features have you used?",
+            "options": [
+                "let-else",
+                "Newtypes",
+                "Derive Macros",
+                "Attribute Macros"
+            ]
+        }
+    }
+}

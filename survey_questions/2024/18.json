@@ -1,0 +1,25 @@
+{
+    "allowComment": false,
+    "type": "single",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "En promedio, ¿con qué frecuencia utiliza Rust?",
+            "options": [
+                "A diario, o casi diariamente",
+                "Semanalmente, o casi",
+                "Mensualmente, o casi",
+                "Rara vez"
+            ]
+        },
+        "en": {
+            "title": "On average, how often do you use Rust?",
+            "options": [
+                "Daily or almost daily",
+                "Weekly or almost weekly",
+                "Monthly or almost monthly",
+                "Rarely"
+            ]
+        }
+    }
+}

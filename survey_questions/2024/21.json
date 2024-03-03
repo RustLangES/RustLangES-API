@@ -1,0 +1,29 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Cuáles sistemas operativos utiliza regularmente para el desarrollo de Rust?",
+            "note": "Esto se refiere específicamente a cuáles sistemas utiliza usted personalmente para el proceso de desarrollo y no en cuáles sistemas se ejecutan las aplicaciones que escribes.",
+            "options": [
+                "Linux ",
+                "Windows 10/11",
+                "Windows 8 ó anterior",
+                "Windows subsistema para Linux",
+                "macOS"
+            ]
+        },
+        "en": {
+            "title": "Which operating systems do you regularly use for Rust development?",
+            "note": "This specifically refers to which systems you personally use for the development process, not the systems on which the applications you write run.",
+            "options": [
+                "Linux",
+                "Windows 10/11",
+                "Windows 8 or earlier",
+                "Windows Subsystem for Linux",
+                "macOS"
+            ]
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "allowComment": true,
+    "type": "single",
+    "section": "resources",
+    "translations": {
+        "es": {
+            "title": "¿Cómo te enteraste de esta encuesta?"
+        },
+        "en": {
+            "title": "How did you find out about this survey?"
+        }
+    }
+}

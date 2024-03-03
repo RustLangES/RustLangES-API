@@ -1,0 +1,27 @@
+{
+    "allowComment": false,
+    "type": "single",
+    "section": "resources",
+    "translations": {
+        "es": {
+            "title": "¿Cual es tu nivel de satisfacción con la Rust Foundation?",
+            "options": [
+                "Muy insatisfecho",
+                "Insatisfecho",
+                "Neutro",
+                "Satisfecho",
+                "Muy satisfecho"
+            ]
+        },
+        "en": {
+            "title": "What is your level of satisfaction with the Rust Foundation?",
+            "options": [
+                "Very dissatisfied",
+                "Dissatisfied",
+                "Neutral",
+                "Satisfied",
+                "Very satisfied"
+            ]
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "resources",
+    "translations": {
+        "es": {
+            "title": "Si usted utilizó material de enseñanza sobre Rust, ¿qué tipo de material ha utilizado?",
+            "options": [
+                "Libros (\"The Rust Programming Language\", \"Rust for Rustaceans\", etc.)",
+                "Ejercicios online (Rustlings, Rust by Example, etc.)",
+                "Videos Cursos online, webinares"
+            ]
+        },
+        "en": {
+            "title": "If you used teaching materials on Rust, what type of material have you used?",
+            "options": [
+                "Books (\"The Rust Programming Language\", \"Rust for Rustaceans\", etc.)",
+                "Online exercises (Rustlings, Rust by Example, etc.)",
+                "Video courses, online webinars"
+            ]
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            INSERT INTO answers (question_id, option_id, answer_comment_id, discord_id)\n            VALUES ($1, $2, $3, $4)\n            ON CONFLICT (question_id, option_id, discord_id) DO NOTHING;\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int2",
+        "Int2",
+        "Int2",
+        "Varchar"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "a52a445209635bae2eaa083c814c563759205238898392966a364c00e3b334ec"
+}

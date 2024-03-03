@@ -1,0 +1,31 @@
+{
+    "allowComment": false,
+    "type": "single",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Cuándo aprendió a programar con Rust?",
+            "note": "Aunque puede que sigas tratando de mejorar tus capacidades con Rust, en esta pregunta puedes asumir que \"aprendiendo a programar con Rust\" significa dedicando la mayor parte del tiempo consumiendo materiales de aprendizaje o realizando ejercicios para aprender (en lugar de lograr algún otro objetivo). Si tu proceso de aprendizaje abarca varios de los períodos listados, por favor escoge aquel en que sientes que aprendiste más.",
+            "options": [
+                "Aún estoy tratando de aprender Rust activamente",
+                "Durante 2023",
+                "Durante 2021 ó 2022",
+                "Durante 2019 ó 2020",
+                "Durante 2017 ó 2018",
+                "Durante 2016 ó antes"
+            ]
+        },
+        "en": {
+            "title": "When did you learn to program with Rust?",
+            "note": "Although you may still be trying to improve your Rust skills, in this question, you can assume that 'learning to program with Rust' means spending the majority of your time consuming learning materials or doing exercises to learn (rather than achieving some other goal). If your learning process spans multiple of the listed periods, please choose the one in which you feel you learned the most.",
+            "options": [
+                "I'm still actively trying to learn Rust",
+                "During 2023",
+                "During 2021 or 2022",
+                "During 2019 or 2020",
+                "During 2017 or 2018",
+                "During 2016 or earlier"
+            ]
+        }
+    }
+}

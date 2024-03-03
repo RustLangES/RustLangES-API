@@ -1,0 +1,35 @@
+{
+    "allowComment": false,
+    "type": "single",
+    "section": "about",
+    "translations": {
+        "es": {
+            "title": "¿Cantidad de empleados en tu empresa?",
+            "options": [
+                "Un empleado",
+                "De 1 a 5 empleados",
+                "De 5 a 10 empleados",
+                "De 10 a 20 empleados",
+                "De 20 a 50 empleados",
+                "De 50 a 100 empleados",
+                "De 100 a 1000 empleados",
+                "Más de 1000 empleados",
+                "No trabajo"
+            ]
+        },
+        "en": {
+            "title": "Number of employees in your company?",
+            "options": [
+                "One employee",
+                "1 to 5 employees",
+                "5 to 10 employees",
+                "10 to 20 employees",
+                "20 to 50 employees",
+                "50 to 100 employees",
+                "100 to 1000 employees",
+                "More than 1000 employees",
+                "I don't work"
+            ]
+        }
+    }
+}

@@ -19,7 +19,8 @@ shuttle-persist = "0.39.0"
 shuttle-runtime = "0.39.0"
 shuttle-secrets = "0.39.0"
 shuttle-shared-db = { version = "0.39.0", features = ["postgres", "sqlx"] }
-sqlx = { version = "0.7.2", features = ["runtime-tokio-native-tls", "postgres", "migrate", "tls-rustls", "uuid"] }
+shuttle-static-folder = "0.28.0"
+sqlx = { version = "0.7.2", features = ["time", "runtime-tokio-native-tls", "postgres", "migrate", "tls-rustls", "uuid"] }
 thiserror = "1.0.50"
 tokio = { version = "1.34.0", features = ["full"] }
 tower-http = { version = "0.5.0", features = ["cors"] }

@@ -1,0 +1,37 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "Si utilizas nightly, ¿por qué?",
+            "options": [
+                "No utilizo nightly",
+                "Por costumbre",
+                "Por funcionalidad particular que necesito",
+                "Me gusta tener acceso a todas la última funcionalidad para ayudar a probar la versión nightly",
+                "Por si aparecen problemas",
+                "Proporcionar comentarios sobre el diseño de las funciones nocturnas.",
+                "Para probar en integración contínua (CI)",
+                "Un crate que utilizo como dependencia lo requiere",
+                "Una herramienta que utilizo lo requiere",
+                "Para tener tiempos de compilación más rápidos"
+            ]
+        },
+        "en": {
+            "title": "If you use nightly, why?",
+            "options": [
+                "I don't use nightly",
+                "Out of habit",
+                "For a specific functionality I need",
+                "I like having access to all the latest functionality to help test the nightly version",
+                "In case issues arise",
+                "Provide feedback on the design of nightly features",
+                "To test in continuous integration (CI)",
+                "A crate I use as a dependency requires it",
+                "A tool I use requires it",
+                "For faster compilation times"
+            ]
+        }
+    }
+}

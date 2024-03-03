@@ -1,4 +1,5 @@
 /target
 .shuttle-storage
-./Secrets.dev.toml
-
+Secrets.dev.toml
+sonarqube
+.scannerwork

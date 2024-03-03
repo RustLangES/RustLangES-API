@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                INSERT INTO questions (question_type, section_type, allow_comment, options_available, survey_id)\n                VALUES (($1::text)::choice_option, ($2::text)::survey_section, $3, $4, $5);\n                ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Text",
+        "Bool",
+        "Int4",
+        "Int2"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "c916a4dbc2b0755e4a30415b27eb9956b6dd47ca1ba2b8cc01ef9c8f08628593"
+}

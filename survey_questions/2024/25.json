@@ -1,0 +1,41 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Cuál editor o IDE utiliza con código Rust regularmente?",
+            "options": [
+                "VS Code",
+                "vi/vim/neovim",
+                "IntelliJ/CLion/otro",
+                "JetBrains IDE + complemento",
+                "Rust Rust Rover (IDE dedicado de IntelliJ Rust)",
+                "Emacs (o derivados como Doom Emacs, Spacemacs, etc.)",
+                "Sublime Text",
+                "Visual Studio",
+                "Xcode",
+                "Atom",
+                "Helix",
+                "Zed"
+            ]
+        },
+        "en": {
+            "title": "Which editor or IDE do you regularly use with Rust code?",
+            "options": [
+                "VS Code",
+                "vi/vim/neovim",
+                "IntelliJ/CLion/other",
+                "JetBrains IDE + plugin",
+                "Rust Rust Rover (dedicated IntelliJ Rust IDE)",
+                "Emacs (or derivatives like Doom Emacs, Spacemacs, etc.)",
+                "Sublime Text",
+                "Visual Studio",
+                "Xcode",
+                "Atom",
+                "Helix",
+                "Zed"
+            ]
+        }
+    }
+}

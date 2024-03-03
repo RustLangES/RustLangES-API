@@ -1,0 +1,37 @@
+{
+    "allowComment": false,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿Cuáles versiones (o versión) de Rust utiliza para desarrollo local?",
+            "options": [
+                "La versión estable más actual",
+                "Una versión estable anterior",
+                "Una versión estable de Rust",
+                "Específica igual o más reciente a 1.67",
+                "Una versión estable de Rust específica anterior a 1.67",
+                "Versión beta",
+                "La versión nightly más reciente",
+                "Una versión específica de nightly",
+                "Una versión modificada (un fork)",
+                "No lo sé"
+            ]
+        },
+        "en": {
+            "title": "Which versions (or version) of Rust do you use for local development?",
+            "options": [
+                "The most current stable version",
+                "An older stable version",
+                "A specific stable version of Rust",
+                "Specifically equal to or more recent than 1.67",
+                "A specific stable version of Rust earlier than 1.67",
+                "Beta version",
+                "The most recent nightly version",
+                "A specific version of nightly",
+                "A modified version (a fork)",
+                "I don't know"
+            ]
+        }
+    }
+}

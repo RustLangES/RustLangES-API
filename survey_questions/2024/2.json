@@ -1,0 +1,27 @@
+{
+    "allowComment": true,
+    "type": "multiple",
+    "section": "use",
+    "translations": {
+        "es": {
+            "title": "¿En qué contexto usas Rust?",
+            "options": [
+                "Profesionalmente",
+                "Como estudiante",
+                "Proyecto personal",
+                "Como hobby",
+                "Otros"
+            ]
+        },
+        "en": {
+            "title": "In what context do you use Rust?",
+            "options": [
+                "Professionally",
+                "As a student",
+                "Personal project",
+                "As a hobby",
+                "Other"
+            ]
+        }
+    }
+}
