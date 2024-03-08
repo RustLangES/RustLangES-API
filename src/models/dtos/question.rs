@@ -1,6 +1,7 @@
+use std::fmt::Debug;
 use sqlx::types::time::PrimitiveDateTime;
 
-use crate::models::question_file::{ChoiceOption, SurveySections};
+use crate::models::adapters::question_files::{choice_option::ChoiceOption, survey_sections::SurveySections};
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Question {

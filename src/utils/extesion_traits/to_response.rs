@@ -3,7 +3,8 @@ use axum::{
     response::{IntoResponse, Response},
 };
 
-use crate::{errors::Errors, models::responses::error_response::ToErrorResponse};
+use crate::errors::Errors;
+use super::to_error_response::ToErrorResponse;
 
 pub trait ToResponse {
     fn to_response(self) -> Response;

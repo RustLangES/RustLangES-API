@@ -1,8 +1,8 @@
 use sqlx::PgPool;
 
 use crate::errors::Errors;
+use crate::models::adapters::question_files::choice_option::ChoiceOption;
 use crate::models::dtos::question::Question;
-use crate::models::question_file::ChoiceOption;
 use crate::models::request::vote::Vote;
 
 use super::answer_comments_service::AnswerCommentsService;

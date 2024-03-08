@@ -5,7 +5,7 @@ use std::{
 
 use sqlx::{query, PgPool};
 
-use crate::{errors::Errors, models::question_file::FileQuestion};
+use crate::{errors::Errors, models::adapters::question_files::file_question::FileQuestion};
 
 pub struct SurveyService;
 
