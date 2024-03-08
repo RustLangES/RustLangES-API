@@ -1,15 +1,12 @@
 use std::io;
 
-use axum::{
-    http::StatusCode,
-    response::{IntoResponse, Response},
-};
+use axum::{http::StatusCode, response::IntoResponse};
 use redis::RedisError;
 use shuttle_runtime::CustomError;
 use thiserror::Error;
 use tracing::error;
 
-use crate::models::responses::error_response::ToErrorResponse;
+use crate::utils::extesion_traits::to_response::ToResponse;
 
 #[derive(Debug, Error)]
 pub enum Errors {
@@ -66,34 +63,15 @@ impl IntoResponse for Errors {
         error!("Error: {:#?}", self);
 
         match self {
-            Errors::UnavailableAnswer => (
-                StatusCode::BAD_REQUEST,
-                Errors::UnavailableAnswer.to_string().to_error_response(),
-            )
-                .into_response(),
-            Errors::IOError(_) => (StatusCode::NOT_FOUND, "Error getting a path".to_error_response()).into_response(),
-            Errors::UNAUTHORIZED => {
-                (StatusCode::UNAUTHORIZED, Errors::UNAUTHORIZED.to_error_response()).into_response()
-            }
+            Errors::UnavailableAnswer => (StatusCode::BAD_REQUEST, Errors::UnavailableAnswer).to_response(),
+            Errors::IOError(_) => (StatusCode::NOT_FOUND, "Error getting a path").to_response(),
+            Errors::UNAUTHORIZED => (StatusCode::UNAUTHORIZED, Errors::UNAUTHORIZED).to_response(),
             Errors::Reqwest(e) => e.to_response(),
-            Self::MigrationError(e) => (
-                StatusCode::CONFLICT,
-                format!("Error migrating database: {e:#?}").to_error_response(),
-            )
-                .into_response(),
-            Self::DatabaseError(e) => {
-                error!("Database Error: {:#?}", e);
-                (
-                    StatusCode::CONFLICT,
-                    format!("Error executing a database query").to_error_response(),
-                )
-                    .into_response()
+            Errors::MigrationError(e) => {
+                (StatusCode::CONFLICT, format!("Error migrating database: {e:#?}")).to_response()
             }
-            e => (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                format!("Something happens {:#?}", e).to_error_response(),
-            )
-                .into_response(),
+            Self::DatabaseError(_) => (StatusCode::CONFLICT, format!("Error executing a database query")).to_response(),
+            e => (StatusCode::INTERNAL_SERVER_ERROR, format!("Something happens {:#?}", e)).to_response(),
         }
     }
 }
@@ -106,28 +84,6 @@ impl From<Errors> for shuttle_runtime::Error {
             Errors::MigrationError(e) => Self::Custom(CustomError::new(e)),
             Errors::DatabaseError(e) => Self::Custom(CustomError::new(e)),
             e => Self::Custom(CustomError::new(e)),
-        }
-    }
-}
-
-trait ToResponse {
-    fn to_response(&self) -> Response;
-}
-
-impl ToResponse for reqwest::Error {
-    fn to_response(&self) -> Response {
-        if self.is_decode() {
-            (StatusCode::BAD_REQUEST, format!("Bad Request: {}", self)).into_response()
-        } else if self.is_timeout() {
-            (StatusCode::REQUEST_TIMEOUT, format!("Request Timeout: {}", self)).into_response()
-        } else if self.is_status() {
-            (StatusCode::BAD_REQUEST, format!("Bad Request: {}", self)).into_response()
-        } else {
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                format!("Internal Server Error: {}", self),
-            )
-                .into_response()
         }
     }
 }
