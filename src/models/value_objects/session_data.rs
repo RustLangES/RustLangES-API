@@ -1,6 +1,7 @@
-use crate::models::discord::{AccessToken, UserData};
 use serde::{Deserialize, Serialize};
 use std::ops::Add;
+
+use crate::models::adapters::discord::{AccessToken, UserData};
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub struct SessionData {

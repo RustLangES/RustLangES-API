@@ -2,7 +2,7 @@ pub mod auth {
     use std::sync::Arc;
 
     use crate::errors::Errors;
-    use crate::models::discord::DiscordCode;
+    use crate::models::adapters::discord::DiscordCode;
     use crate::services::discord_service::DiscordService;
     use crate::services::user_service::UserService;
     use crate::utils::extractors::validate_query::ValidatedQuery;

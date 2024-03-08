@@ -4,4 +4,3 @@ use serde::Serialize;
 pub struct ErrorResponse {
     pub message: String,
 }
-

@@ -2,7 +2,7 @@ use reqwest::Client;
 
 use crate::{
     errors::Errors,
-    models::discord::{AccessToken, UserData},
+    models::adapters::discord::{AccessToken, UserData},
 };
 
 pub struct DiscordService {

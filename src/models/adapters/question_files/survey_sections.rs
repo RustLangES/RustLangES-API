@@ -1,5 +1,5 @@
-use std::fmt::Display;
 use core::fmt;
+use std::fmt::Display;
 
 use serde::{Deserialize, Serialize};
 use sqlx::prelude::Type;

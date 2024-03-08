@@ -1,5 +1,5 @@
-use axum::Json;
 use crate::{errors::Errors, models::responses::error_response::ErrorResponse};
+use axum::Json;
 
 pub trait ToErrorResponse {
     fn to_error_response(self) -> Json<ErrorResponse>;

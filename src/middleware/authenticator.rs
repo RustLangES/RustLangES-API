@@ -10,7 +10,7 @@ use axum::{
 
 use serde::{Deserialize, Serialize};
 
-use crate::{errors::Errors, models::discord::UserData, AppState};
+use crate::{errors::Errors, models::adapters::discord::UserData, AppState};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct AuthMiddleware(pub UserData);

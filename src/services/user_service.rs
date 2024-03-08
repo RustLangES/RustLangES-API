@@ -2,7 +2,7 @@ use sqlx::PgPool;
 
 use crate::{
     errors::Errors,
-    models::discord::{AccessToken, ChannelUser, UserData},
+    models::adapters::discord::{AccessToken, ChannelUser, UserData},
 };
 
 pub struct UserService {}

@@ -1,7 +1,7 @@
-use std::fmt::Display;
-use std::fmt;
 use serde::{Deserialize, Serialize};
 use sqlx::prelude::Type;
+use std::fmt;
+use std::fmt::Display;
 
 #[derive(Debug, Deserialize, Serialize, Clone, Type, PartialEq)]
 #[sqlx(type_name = "choice_option", rename_all = "lowercase")]
