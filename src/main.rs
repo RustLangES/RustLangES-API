@@ -3,7 +3,7 @@ use axum::{
     routing::{get, post},
     Router,
 };
-use controllers::{health_check::health_checker_handler, survey::survey::load_survey, vote::vote::vote};
+use controllers::{answer::answer, health_check::health_checker_handler, survey::survey::load_survey, vote::vote::vote};
 use middleware::authenticator::authenticator;
 use shuttle_secrets::SecretStore;
 use sqlx::PgPool;
@@ -66,6 +66,7 @@ async fn main(
     let router = Router::new().route("/healthchecker", get(health_checker_handler));
 
     let auth_routes = Router::new().route("/discord", get(auth::discord));
+    let answer_routes = Router::new().route("/answer", get(answer::get_answers));
 
     let track_routes = Router::new()
         .route("/track/count", post(track::count_visit_references))
@@ -79,6 +80,7 @@ async fn main(
         .merge(track_routes)
         .merge(vote_routes)
         .merge(survey_routes)
+        .merge(answer_routes)
         .route_layer(axum::middleware::from_fn_with_state(
             initial_state.clone(),
             authenticator,

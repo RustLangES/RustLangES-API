@@ -1,6 +1,6 @@
-use sqlx::{query, Error, PgPool};
+use sqlx::{query, Error, FromRow, PgPool};
 
-use crate::models::request::vote::Vote;
+use crate::models::{dtos::answer::Answer, request::vote::Vote};
 
 use super::answer_comments_service::AnswerCommentsService;
 
@@ -34,5 +34,14 @@ impl AnswerService {
         .await?;
 
         Ok(())
+    }
+
+    /// # Errors
+    /// `Errors::DatabaseError`
+    pub async fn get_answers_by_discord_id(db_pool: &PgPool, discord_id: &str) -> Result<Vec<Answer>, Error> {
+
+        let answers = query(r#"SELECT a.*, ac.comment, null as "answer_comment: AnswerComment" FROM answers a LEFT JOIN answer_comments ac ON ac.id= a.answer_comment_id WHERE a.discord_id = $1 "#).bind(discord_id).try_map(|row| Answer::from_row(&row)).fetch_all(db_pool).await?;
+
+        Ok(answers)
     }
 }
